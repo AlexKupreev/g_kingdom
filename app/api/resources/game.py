@@ -6,6 +6,7 @@ from app.api.schemas import GameSchema
 from app.models import Game, Settings, State
 from app.extensions import db
 from app.commons.pagination import paginate
+from app.services.settings import SettingsService
 from app.services.state import StateService
 
 
@@ -155,11 +156,10 @@ class GameList(Resource):
         schema = GameSchema()
         game = schema.load(request.json)
 
-        settings = Settings()
+        settings = SettingsService.initialize(Settings())
         settings.game = game
 
-        state = StateService.generate_state(settings)
-
+        state = StateService.generate_state(State())
         game.states.append(state)
 
         db.session.add(game)

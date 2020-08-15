@@ -1,0 +1,9 @@
+settings:
+  gold_earn: 1.0
+  gold_spent_worker: 0.5
+  gold_spent_army: 0.8
+  win_probability: 0.5
+  enemy_increase: 1.5
+  uncertain_gold: 0.2
+  uncertain_population: 0.1
+  uncertain_army: 0.1

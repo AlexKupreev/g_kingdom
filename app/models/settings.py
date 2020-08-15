@@ -30,7 +30,5 @@ class Settings(db.Model):
     def __init__(self, **kwargs):
         super(Settings, self).__init__(**kwargs)
 
-        SettingsService.initialize(self)
-
     def __repr__(self):
         return "<Settings %s>" % self.id
